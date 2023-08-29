@@ -43,6 +43,7 @@ import moment from 'moment'
 import 'moment/locale/pt-br'
 
 export default {
+  name: 'VisitasAgendadas',
   data() {
     return {
       listaOs: [
@@ -85,7 +86,6 @@ export default {
       today: moment(),
     }
   },
-  name: 'VisitasAgendadas',
   computed: {
     groupedCards() {
       return this.groupCardsByDay()

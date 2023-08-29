@@ -41,6 +41,7 @@
   import 'moment/locale/pt-br';
   
   export default {
+    name: 'OsNaGarantia',
     data() {
       return {
         listaOs: [
@@ -80,11 +81,10 @@
             horario: '15:00',
           },
         ],
-        
+
         today: moment(),
       };
     },
-    name: 'OsNaGarantia',
     computed: {
       groupedCards() {
         return this.groupCardsByDay();
