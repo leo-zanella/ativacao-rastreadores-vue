@@ -108,7 +108,7 @@
                     <v-img
                       rounded-lg
                       classbr="10"
-                      src="../assets/maxtrack.png"
+                      :src="require('../static/maxtrack.png')"
                     ></v-img>
 
                     <v-divider></v-divider>
@@ -388,14 +388,21 @@ export default {
       if (todosMarcados) {
         this.exibirOverlay = true
       } else {
-        this.e1 = this.e1 + 1
         this.confirmarStep()
       }
     },
 
     confirmarStep() {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-      this.e1 = this.e1 + 1
+      if (this.$refs.form.validate()) {
+    this.e1 = this.e1 + 1;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else {
+    // Se algum campo não for válido, exiba uma mensagem de erro
+    this.$snackbar.showSnackbar({
+      text: 'Por favor, preencha todos os campos obrigatórios.',
+      color: 'error',
+    });
+  }
     },
 
     handleFileInputChange(fieldName) {
@@ -439,7 +446,7 @@ export default {
 }
 </script>
   
-  <style>
+  <style scoped>
 .v-card__subtitle,
 .v-card__text,
 .v-card__title {

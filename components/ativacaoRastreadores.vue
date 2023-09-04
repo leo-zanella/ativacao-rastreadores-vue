@@ -3,9 +3,9 @@
   
       <h2 class="align-center justify-center d-flex">Ativação do Rastreador</h2>
   
-      <v-col cols="14" md="4">
+      <v-col md="4">
   
-        <v-card height="170" class="pa-5 d-flex align-center flex-column">
+        <v-card height="180" class="pa-2 d-flex align-center flex-column">
           <v-card-title >Status da alimentação:</v-card-title>
             <v-icon large class="ma-2" :color="getAlimentacaoIconColor()">{{'mdi-lightning-bolt'}}</v-icon>
             <v-container class="d-flex text-center justify-center">
@@ -14,47 +14,41 @@
             </v-card>
       </v-col>
   
-      <v-col cols="12" md="4">
+      <v-col md="4">
         
-        <v-card height="150" class="pa-5 d-flex justify-center align-center flex-column">
+        <v-card height="180" class="pa-2 d-flex align-center flex-column">
           <v-card-title>Status da Ignição</v-card-title>
             <v-icon large class="ma-2" :color="getIgnicaoIconColor()">{{'mdi-key-variant'}}</v-icon>
               {{ ignicao ? 'Veículo ligado' : 'Veículo desligado' }}
         </v-card>
       </v-col>
   
-      <v-col
-            cols="12"
-            md="4"
-          >
+      <v-col md="4">
   
-      <v-card class="pa-5 d-flex justify-center align-center flex-column">
+      <v-card height="180" class="pa-1 d-flex align-center flex-column">
         <v-card-title>Bloqueio</v-card-title>
-        <v-icon class="ma-5" large :class="getBloqueioIconClass()">{{ getBloqueioIcon() }}</v-icon>
-          <v-btn v-if="!saida1.checked" @click="ativarSaida(1)">Ativar</v-btn>
-          <v-btn v-else-if="saida1.checked && !saida1.tested" @click="testarSaida(1)">Testar Saída 1</v-btn>
-          <v-btn v-else-if="saida1.checked && saida1.tested && !saida1.worked" @click="testarSaida(1)">Reenviar Comando</v-btn>
-          <v-btn v-else-if="saida1.checked && saida1.tested && saida1.worked" @click="desativarSaida(1)">Desativar Saída 1</v-btn>
+        <v-icon class="mb-2" large :class="getBloqueioIconClass()">{{ getBloqueioIcon() }}</v-icon>
+          <v-btn v-if="!saida1.checked" class="mt-2" @click="ativarSaida(1)">Ativar</v-btn>
+          <v-btn v-else-if="saida1.checked && !saida1.tested" class="mt-2" @click="testarSaida(1)">Testar Saída 1</v-btn>
+          <v-btn v-else-if="saida1.checked && saida1.tested && !saida1.worked" class="mt-2" @click="testarSaida(1)">Reenviar Comando</v-btn>
+          <v-btn v-else-if="saida1.checked && saida1.tested && saida1.worked" class="mt-2" @click="desativarSaida(1)">Desativar Saída 1</v-btn>
         </v-card>
       </v-col>
   
-      <v-col
-            cols="12"
-            md="4"
-          >
+      <v-col md="4">
   
-      <v-card class="pa-5 d-flex justify-center align-center flex-column">
+      <v-card height="180" class="pa-1 d-flex align-center flex-column">
         <v-card-title>Buzzer</v-card-title>
-        <v-icon class="ma-5" x-large :color="getBuzzerIconClass()" >{{'mdi-whistle'}}</v-icon>
-        <v-btn v-if="!saida2.checked" @click="ativarSaida(2)">Ativar</v-btn>
-        <v-btn v-else-if="saida2.checked && !saida2.tested" @click="testarSaida(2)">Testar Saída 2</v-btn>
-        <v-btn v-else-if="saida2.checked && saida2.tested && !saida2.worked" @click="testarSaida(2)">Reenviar Comando</v-btn>
-        <v-btn v-else-if="saida2.checked && saida2.tested && saida2.worked" @click="desativarSaida(2)">Desativar Saída 2</v-btn>
+        <v-icon class="mb-2" x-large :color="getBuzzerIconClass()" >{{'mdi-whistle'}}</v-icon>
+        <v-btn v-if="!saida2.checked" class="mt-2" @click="ativarSaida(2)" > Ativar </v-btn>
+        <v-btn v-else-if="saida2.checked && !saida2.tested" class="mt-2" @click="testarSaida(2)">Testar Saída 2</v-btn>
+        <v-btn v-else-if="saida2.checked && saida2.tested && !saida2.worked" class="mt-2" @click="testarSaida(2)">Reenviar Comando</v-btn>
+        <v-btn v-else-if="saida2.checked && saida2.tested && saida2.worked" class="mt-2" @click="desativarSaida(2)">Desativar Saída 2</v-btn>
       </v-card>
   
       </v-col>
     </div>
-  </template>
+    </template>
   
   <script>
   export default {

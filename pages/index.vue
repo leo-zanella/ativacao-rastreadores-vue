@@ -12,19 +12,19 @@
               v-for="item in group"
               :key="item.os"
               width="100%"
-              height="150"
-              class="mb-5 align-center justify-center flex-column"
+              height="200"
+              class="mb-5 align-center justify-center"
               elevation="1"
               color="grey lighten-3"
               @click="redirectToInformacoesOrdem"
             >
               <v-card-title>
-                <v-chip label>OS.{{ item.os }}</v-chip>
+                <v-chip class="mt-3 ml-3" label>OS.{{ item.os }}</v-chip>
                 <v-spacer></v-spacer>
-                <v-chip class="mr-3">{{ item.horario }}</v-chip>
+                <v-chip class="mt-3 mr-3">{{ item.horario }}</v-chip>
               </v-card-title>
 
-              <v-card-subtitle class="text-black subtitle-1">
+              <v-card-subtitle class="ml-3 mt-4 text-black subtitle-1">
                 Tipo: {{ item.tipo }} <br />
                 Empresa: {{ item.cliente }}
               </v-card-subtitle>
