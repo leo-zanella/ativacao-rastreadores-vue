@@ -384,7 +384,7 @@ export default {
     },
 
     avancarSemOverlay() {
-      const todosMarcados = this.checkboxes.some((checkbox) => !checkbox)
+      const todosMarcados = this.checkboxes.every((checkbox) => !checkbox)
       if (todosMarcados) {
         this.exibirOverlay = true
       } else {
@@ -393,16 +393,8 @@ export default {
     },
 
     confirmarStep() {
-      if (this.$refs.form.validate()) {
-    this.e1 = this.e1 + 1;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  } else {
-    // Se algum campo não for válido, exiba uma mensagem de erro
-    this.$snackbar.showSnackbar({
-      text: 'Por favor, preencha todos os campos obrigatórios.',
-      color: 'error',
-    });
-  }
+      this.e1 = this.e1 + 1
+      window.scrollTo({ top: 0, behavior: 'smooth' })
     },
 
     handleFileInputChange(fieldName) {

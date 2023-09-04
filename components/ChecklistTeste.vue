@@ -65,15 +65,15 @@
         },
       },
     },
+    mounted() {
+      this.emitirDadosCheckbox();
+  },
   
   
     methods: {
       emitirDadosCheckbox() {
         this.$emit("dados-checkbox", this.checkboxes);
       },
-      mounted() {
-        this.emitirDadosCheckbox();
-    },
     },
   };
   </script>
